@@ -29,7 +29,7 @@ const HomePage = () => {
             WebkitTextFillColor: 'transparent',
           }}
         >
-          Midterm Exam
+          Quiz 2
         </div>
         <a className="blue-button rounded-md bg-[--primary-8] text-white hover:brightness-90">
           Join Waitlist

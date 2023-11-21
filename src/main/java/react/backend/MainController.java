@@ -11,4 +11,9 @@ public class MainController {
 	public String index() { 
 		return "index"; 
 	}
+
+	@RequestMapping(value="/dashboards", method=RequestMethod.GET)
+	public String dashboards() { 
+		return "dashboards/dashboards"; 
+	}
 }
