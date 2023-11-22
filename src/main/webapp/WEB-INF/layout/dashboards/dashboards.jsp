@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="EN">
 <head>
     <title>Quiz 2</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <%-- Initial State of Navbar Colour --%>
+    <!-- Initial State of Navbar  -->
     <%
         String initialState = "Todolist";
         request.setAttribute("currentState", initialState);
@@ -69,8 +70,13 @@
   </nav>       
 
   <!-- Content -->
-  <div>
-    Current State: <%= request.getAttribute("currentState") %>
-  </div>   
+  <c:if test="${requestScope.currentState == 'Todolist'}">
+    <div class="mt-3">
+      <div class="font-bold text-xl text-center items-center content-center">
+        Todolist here
+      </div>
+    </div>
+  </c:if>
+
 </body>
 </html>
