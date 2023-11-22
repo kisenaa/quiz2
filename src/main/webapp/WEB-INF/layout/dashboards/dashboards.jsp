@@ -6,10 +6,17 @@
     <title>Quiz 2</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Initial State of Navbar  -->
-    <%
-        String initialState = "Todolist";
-        request.setAttribute("currentState", initialState);
-    %>
+    <c:if test="${empty sessionScope.currentState}">
+      <c:set var="currentState" value="Todolist" scope="session" />
+  </c:if>
+    <!-- Changing State of Navbar  -->
+  <script>
+    async function setState(state) {
+        urlLink = 'http://localhost:8080/setState?value=' + state
+        fetch(urlLink, { method: 'POST' });
+        window.location.reload();
+    }
+  </script>
 </head>
 
 <body>
@@ -26,22 +33,22 @@
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="<%= "Todolist".equals(request.getAttribute("currentState")) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" %> 
+              <button onclick="setState('Todolist')"  class="<%= "Todolist".equals(session.getAttribute("currentState")) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" %> 
                 rounded-md px-3 py-2 text-md font-medium">
-                <button>Todolist</button>
-              </a>              
-              <a href="#" class="<%= "Weather".equals(request.getAttribute("currentState")) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" %> 
+                Todolist
+              </button>              
+              <button onclick="setState('Weather')" class="<%= "Weather".equals(session.getAttribute("currentState")) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" %> 
                 rounded-md px-3 py-2 text-md font-medium">
-                <button>Weather</button>
-              </a>   
-              <a href="#" class="<%= "Project".equals(request.getAttribute("currentState")) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" %> 
+                Weather
+              </button>   
+              <button onclick="setState('Calendar')" class="<%= "Calendar".equals(session.getAttribute("currentState")) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" %> 
                 rounded-md px-3 py-2 text-md font-medium">
-                <button>Project</button>
-              </a>   
-              <a href="#" class="<%= "Calendar".equals(request.getAttribute("currentState")) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" %> 
+                Calendar
+              </button>   
+              <button onclick="setState('Profile')" class="<%= "Profile".equals(session.getAttribute("currentState")) ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" %> 
                 rounded-md px-3 py-2 text-md font-medium">
-                <button>Calendar</button>
-              </a>   
+              Profile
+              </button>   
             </div> 
           </div>
           
@@ -70,10 +77,35 @@
   </nav>       
 
   <!-- Content -->
-  <c:if test="${requestScope.currentState == 'Todolist'}">
+  <c:if test="${sessionScope.currentState == 'Todolist'}">
     <div class="mt-3">
       <div class="font-bold text-xl text-center items-center content-center">
-        Todolist here
+        Todolist page here
+      </div>
+    </div>
+  </c:if>
+
+
+  <c:if test="${sessionScope.currentState == 'Weather'}">
+    <div class="mt-3">
+      <div class="font-bold text-xl text-center items-center content-center">
+        Weather page here
+      </div>
+    </div>
+  </c:if>
+
+  <c:if test="${sessionScope.currentState == 'Calendar'}">
+    <div class="mt-3">
+      <div class="font-bold text-xl text-center items-center content-center">
+        Calendar page here
+      </div>
+    </div>
+  </c:if>
+
+  <c:if test="${sessionScope.currentState == 'Profile'}">
+    <div class="mt-3">
+      <div class="font-bold text-xl text-center items-center content-center">
+        Profile page here
       </div>
     </div>
   </c:if>
