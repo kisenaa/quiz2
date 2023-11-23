@@ -15,10 +15,15 @@ public class MainController {
 	public String index() { 
 		return "index"; 
 	}
+	
+	@RequestMapping(value="/dashboard", method=RequestMethod.GET)
+	public String dashboard() { 
+		return "index"; 
+	}
 
 	@RequestMapping(value="/dashboards", method=RequestMethod.GET)
 	public String dashboards() { 
-		return "dashboards/dashboards"; 
+		return "dashboards/index"; 
 	}
 
 	@RequestMapping(value ="/setState", method=RequestMethod.POST)
