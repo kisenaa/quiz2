@@ -17,13 +17,6 @@ export default defineConfig((configEnv) => {
       nodePolyfills({
         include: ['buffer', 'crypto', 'util', 'stream'],
       }),
-      VitePWA({
-        registerType: 'autoUpdate',
-        devOptions: {
-          enabled: true,
-          type: 'module',
-        },
-      }),
     ],
     resolve: {
       alias: {

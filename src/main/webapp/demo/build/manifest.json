@@ -6,18 +6,16 @@
   "index.html": {
     "assets": [
       "assets/bg-fa39789a.jpg",
-      "assets/express-ff9fcfe2.svg",
-      "assets/nodejs-dc328127.svg",
       "assets/postqres-50e07c40.svg",
       "assets/react-d3b2735a.svg",
       "assets/tailwind-4b12ffc4.svg",
-      "assets/tslogo-37dfbdff.svg",
+      "assets/java-3e972855.svg",
       "assets/Inter-cf3cb43b.ttf"
     ],
     "css": [
       "assets/index-f9aa6768.css"
     ],
-    "file": "assets/index-5db687c4.js",
+    "file": "assets/index-c34b77cc.js",
     "isEntry": true,
     "src": "index.html"
   },
@@ -29,13 +27,9 @@
     "file": "assets/bg-fa39789a.jpg",
     "src": "src/assets/images/bg.jpg"
   },
-  "src/assets/images/express.svg": {
-    "file": "assets/express-ff9fcfe2.svg",
-    "src": "src/assets/images/express.svg"
-  },
-  "src/assets/images/nodejs.svg": {
-    "file": "assets/nodejs-dc328127.svg",
-    "src": "src/assets/images/nodejs.svg"
+  "src/assets/images/java.svg": {
+    "file": "assets/java-3e972855.svg",
+    "src": "src/assets/images/java.svg"
   },
   "src/assets/images/postqres.svg": {
     "file": "assets/postqres-50e07c40.svg",
@@ -48,9 +42,5 @@
   "src/assets/images/tailwind.svg": {
     "file": "assets/tailwind-4b12ffc4.svg",
     "src": "src/assets/images/tailwind.svg"
-  },
-  "src/assets/images/tslogo.svg": {
-    "file": "assets/tslogo-37dfbdff.svg",
-    "src": "src/assets/images/tslogo.svg"
   }
 }

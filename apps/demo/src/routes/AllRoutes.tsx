@@ -11,6 +11,7 @@ import SignUps from '@/components/SignUp';
 
 import Dashboard from '@/pages/dashboard/Dashboard';
 import HomePage from '@/pages/HomePage';
+import AuthRedirect from '@/pages/AuthRedirect';
 
 const clerkPubKey = `${import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY}`;
 
@@ -24,6 +25,7 @@ const AllRoutes = () => {
         <Route path="/sign-in/*" element={<SignIns />} />
         <Route path="/sign-up/*" element={<SignUps />} />
         <Route path="/home/*" element={<HomePage />} />
+        <Route path="/AuthRedirect/*" element={<AuthRedirect />} />
         <Route
           path="/dashboard/*"
           element={

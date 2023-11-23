@@ -15,6 +15,16 @@ public class MainController {
 	public String index() { 
 		return "index"; 
 	}
+
+	@RequestMapping(value="/sign-in", method=RequestMethod.GET)
+	public String signIn() { 
+		return "index"; 
+	}
+
+	@RequestMapping(value="/sign-up", method=RequestMethod.GET)
+	public String signUp() { 
+		return "index"; 
+	}
 	
 	@RequestMapping(value="/dashboard", method=RequestMethod.GET)
 	public String dashboard() { 
@@ -24,6 +34,11 @@ public class MainController {
 	@RequestMapping(value="/dashboards", method=RequestMethod.GET)
 	public String dashboards() { 
 		return "dashboards/index"; 
+	}
+
+	@RequestMapping(value="/AuthRedirect", method=RequestMethod.GET)
+	public String AuthRedirect() { 
+		return "index"; 
 	}
 
 	@RequestMapping(value ="/setState", method=RequestMethod.POST)

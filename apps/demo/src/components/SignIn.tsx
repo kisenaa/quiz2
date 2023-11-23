@@ -16,8 +16,8 @@ const SignIns = ({ children }: { children?: ReactNode }) => {
         <SignIn
           routing="path"
           path="/sign-in"
-          afterSignInUrl="/dashboard"
-          redirectUrl="/dashboard"
+          afterSignInUrl="/AuthRedirect"
+          redirectUrl="/AuthRedirect"
         />
         {children}
       </div>

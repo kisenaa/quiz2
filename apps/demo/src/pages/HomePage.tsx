@@ -3,19 +3,17 @@ import { FaAngleRight } from 'react-icons/fa';
 import { MdLogin } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 
-import express from '../assets/images/express.svg';
-import nodejslogo from '../assets/images/nodejs.svg';
 import postqres from '../assets/images/postqres.svg';
 import reactlogo from '../assets/images/react.svg';
 import tailwind from '../assets/images/tailwind.svg';
-import tslogo from '../assets/images/tslogo.svg';
+import tslogo from '../assets/images/java.svg';
 
 const HomePage = () => {
   const { isSignedIn } = useUser();
   const navigate = useNavigate();
 
   const handleSignIn = () => {
-    isSignedIn ? navigate('/dashboard') : navigate('/sign-in');
+    isSignedIn ? window.location.replace('/AuthRedirect') : navigate('/sign-in');
   };
 
   return (
@@ -70,9 +68,7 @@ const HomePage = () => {
 
         <div className="mt-5 flex flex-row gap-4">
           <img src={reactlogo} />
-          <img src={nodejslogo} />
           <img src={tslogo} />
-          <img src={express} />
           <img src={postqres} />
           <img src={tailwind} />
         </div>
